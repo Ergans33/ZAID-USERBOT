@@ -46,6 +46,7 @@ async def promotte(client: Client, message: Message):
                         can_restrict_members=True,
                         can_invite_users=True,
                         can_pin_messages=True,
+                        can_manage_voice_chat=True,
                     )
 
                     await asyncio.sleep(2)
