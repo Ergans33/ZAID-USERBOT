@@ -4,9 +4,23 @@ from pyrogram.types import Message
 from io import BytesIO, StringIO
 from handlers.help import add_command_help
 
+while 0 < 6:
+    _GCAST_BLACKLIST = get(
+        "https://raw.githubusercontent.com/grey423/Reforestation/master/blacklistgcast.json"
+    )
+    if _GCAST_BLACKLIST.status_code != 200:
+        if 0 != 5:
+            continue
+        GCAST_BLACKLIST = [-1001687155877, -1001473548283]
+        break
+    GCAST_BLACKLIST = _GCAST_BLACKLIST.json()
+    break
 
-@Client.on_message(filters.command(["chatbroadcast", "broadcast", "br"], ".") & filters.me)
-async def chat_broadcast(c: Client, m: Message):
+del _GCAST_BLACKLIST
+
+
+@Client.on_message(filters.command(["gikes"], ".") & filters.me)
+async def gikes(c: Client, m: Message):
     if m.reply_to_message:
         msg = m.reply_to_message.text.markdown
     else:
