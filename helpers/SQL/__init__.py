@@ -16,7 +16,7 @@ def start() -> scoped_session:
 
 def start() -> scoped_session:
     dbi_url=DB_URL
-    engine = create_engine(dbi_url)
+    engine = create_engine(DB_URL)
     BASE.metadata.bind = engine
     BASE.metadata.create_all(engine)
     return scoped_session(sessionmaker(bind=engine, autoflush=False))
