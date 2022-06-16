@@ -217,4 +217,4 @@ class SqliteDatabase(Database):
 if MONGO_DB:
     db = MongoDatabase(MONGO_DB, SPAMBOT)
 else:
-    dbb = SqliteDatabase(DB_URL)
+    db = SqliteDatabase(DB_URL)
