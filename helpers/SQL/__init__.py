@@ -4,8 +4,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 from main import DB_URL, MONGO_DB
 import motor.motor_asyncio
-mongo_dbb = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DB)
 
+mongo_dbb = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DB)
 dbb = mongo_dbb["SPAMBOT"]
 SPAMBOT = 'SPAMBOT'
 def start() -> scoped_session:
